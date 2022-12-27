@@ -65,7 +65,7 @@ if __name__ == "__main__":
         "Yen": 13003
     }
     dataKeys = list(data.keys())
-    dataValues = list(data.values())
+    dataValues = list(data.values())2
 
     print("===========================")
     user = int(input("Masukan Menu      : "))
