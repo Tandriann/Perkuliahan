@@ -1,44 +1,80 @@
-import os
-# function buatan :
-# function tampilData dengan parameter nama,nim yang diterima dari argument yg dikirimkan
+class MoneyCorveter:
+    def __init__(self, name):
+        self.name = name
 
+    def tampilan(self):
+        print(f"Halo {self.name}")
+        print("===========================")
 
-def tampilData(nama, nim):
-    print(f"\n{'Data':=^20}")
-    print(f"Nama : {nama}\nNim : {nim}")
-    print("="*20)
+    def validate(self, valid):
+        if valid > 0 and valid < 4:
+            return True
+        else:
+            return False
 
-# function inputan
+    def matauang(self, daftar):
+        for key, value in daftar.items():
+            index = 1
+            print(
+                f"{index : <1}{'.' : <2}{key : <15}{':' : <2}{'Rp.' : <1}{value: >1}")
+        print("===========================\n")
 
+    def konvers(self, daftar, nilai):
+        for key, value in daftar.items():
+            has = nilai*value
+            print(f"{nilai : <1}{'.' : <2}{key : <15}{':' : <2}{'Rp.' : <1}{has: >1}")
+        print("===========================\n")
 
-def inputan():
-    os.system("clear")
-    nama = input("Nama : ")
-    while True:
-        os.system("clear")
-        print(f"Nama : {nama}")
+    def penukaran(self, nama):
+        pass
+
+    def formatrupiah(uang):
+        list_uang = list(str(uang))
         try:
-            nim = int(input("Nim : "))
-            return nama, nim
+            # Memisahkan nilai desimal
+            tanpa_desimal = list_uang[:list_uang.index('.')]
+            desimal = list_uang[list_uang.index('.'):]
         except:
-            print("Nim harus Angka! ")
-            e = input("enter: ")
+            # Jika tidak ada desimal
+            tanpa_desimal = list_uang
+            desimal = []
 
-# function main
-
-
-def main():
-    # memanggil function inputan untuk digunakan
-    nama, nim = inputan()
-    # memanggil function tampilData dengan mengirimkan argument nama dan nim
-    tampilData(nama, nim)
-
-    # contoh memanggil function sum yg sudah disediakan :
-    a = [6, 7, 2, 3, 9, 8]
-    h = sum(a)
-    print(h)
-    # output = 35
+        n = len(tanpa_desimal)-3
+        while n > 0:
+            tanpa_desimal.insert(n, ',')
+            n -= 3
+        return ''.join(tanpa_desimal) + ''.join(desimal)
 
 
-# memanggil function main
-main()
+if __name__ == "__main__":
+    print('''
+    === Money Changer Tel-U ===
+    ||                        ||
+    ||   1. Pengecekan Kurs   ||
+    ||   2. Penukaran uang    ||
+    ||   3. Database          ||
+    ||   4. Exit              ||
+    ||                        ||
+    ============================
+    ''')
+    data = {
+        "Dollar": 14288,
+        "Euro": 17470,
+        "Poundsterling": 20282,
+        "Ringgit": 3541,
+        "Yen": 13003
+    }
+    dataKeys = list(data.keys())
+    dataValues = list(data.values())
+
+    print("===========================")
+    user = int(input("Masukan Menu      : "))
+    nama = input("Masukan Nama Anda : ")
+    result = MoneyCorveter(nama)
+    result.tampilan()
+    if result.validate(user):
+        if user == 1:
+            result.matauang(data)
+            print("===========================")
+            nominal = int(input("Masukan Nominal    : "))
+            result.konvers(data, nominal)
