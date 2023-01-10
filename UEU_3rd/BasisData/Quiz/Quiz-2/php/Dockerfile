@@ -1,4 +1,3 @@
-
 FROM php:8.0-fpm
 
 ENV PS1="\u@\h:\w\\$ "
