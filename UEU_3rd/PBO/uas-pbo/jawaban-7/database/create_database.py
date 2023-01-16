@@ -5,11 +5,14 @@ mydb = mysql.connector.connect(
     port=23306,
     user="root",
     password="p455w0rd",
-    database="Kebun"
 )
-
-print(mydb)
 
 db = mydb.cursor()
 
-db.execute("CREATE DATABASE kebunku")
+db.execute("SHOW DATABASES")
+
+try:
+    for i in db:
+        print(i)
+except:
+    print("Gagal!")

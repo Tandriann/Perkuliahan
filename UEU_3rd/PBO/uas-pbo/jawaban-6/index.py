@@ -2,15 +2,17 @@ import mysql.connector
 
 mydb = mysql.connector.connect(
     host="127.0.0.1",
-    port=33306,
+    port=23306,
     user="root",
     password="p455w0rd",
-    database="kebun"
 )
 
 db = mydb.cursor()
 
-db.execute("SHOW TABLES")
+db.execute("SHOW DATABASES")
 
-for x in db:
-    print(x)
+try:
+    for i in db:
+        print(i)
+except:
+    print("Gagal!")

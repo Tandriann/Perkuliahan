@@ -1,10 +1,9 @@
-version : '3'
+version: "3"
 
 services:
-
   mysqlpython:
     image: mariadb:10.2
-    container_name: mysqlpython
+    container_name: mysql
     restart: unless-stopped
     tty: true
     ports:
