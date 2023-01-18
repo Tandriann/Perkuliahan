@@ -4,7 +4,7 @@ from tkinter.messagebox import showinfo
 import os
 
 window = tk.Tk()
-window.configure(bg="Green")
+window.configure(bg="Orange")
 window.geometry("450x500")
 
 
