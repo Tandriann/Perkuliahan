@@ -15,7 +15,7 @@ def tampilData(data):
 def inputData():
     nim = input("Masukkan Nim : ")
     nama = input("Masukkan Nama : ")
-    return nim, nama
+    return nim, nama    
 
 
 def main():
