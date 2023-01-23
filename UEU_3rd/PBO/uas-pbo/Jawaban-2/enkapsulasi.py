@@ -11,10 +11,10 @@ class Students:
 
 
 # create 4 objects
-st1 = Students("Marcel", 1, 100)
+st1 = Students("Dimas", 1, 100)
 st2 = Students("Adit", 2, 90)
 st3 = Students("Nizar", 3, 76)
-st4 = Students("Tekheng", 4, 60)
+st4 = Students("Wahyu", 4, 60)
 
 # panggil fungsi menggunakan objek yang dibuat di atas
 st1.demofunc()

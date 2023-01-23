@@ -118,6 +118,6 @@ class OrderController extends Controller
 
     public function join()
     {
-        $query = DB::select('SELECT user, name_product, total, `status` FROM `orders` JOIN `product` WHERE `orders.user`');
+        $query = DB::select();
     }
 }

@@ -25,6 +25,4 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->delete('/user/{id}', ['uses' => 'UserController@destroy']);
     $router->get('/product', ['uses' => 'ProductController@index']);
     $router->get('/order', ['uses' => 'OrderController@index']);
-    $router->get('/order', ['uses' => 'OrderControler@edit']);
-    $router->get('/order', ['uses' => 'OrderControler@updete']);
 });

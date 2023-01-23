@@ -10,8 +10,8 @@ class Mahasiswa:
 
 
 # instantiate Mahasiswa class
-a = Mahasiswa("Rian", 123456789)
-b = Mahasiswa("Tandrian", 1234567890)
+a = Mahasiswa("Adit", 123456789)
+b = Mahasiswa("Nizar", 1234567890)
 
 # access the class attributes
 print("A tergabung dalam {}".format(a.__class__.matkul))
