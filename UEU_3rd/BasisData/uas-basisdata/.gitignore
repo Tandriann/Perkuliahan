@@ -2,9 +2,6 @@ mariadb/*
 mariadb
 src/vendor
 src/.idea
-src/.editorconfig
-src/composer.json
 src/Homestead.yaml
 src/.env
-src/.env.example
 src/.phpunit.result.cache
