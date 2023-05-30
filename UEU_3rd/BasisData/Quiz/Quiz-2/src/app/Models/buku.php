@@ -4,11 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class buku extends Model
 {
-    //
     protected $connection = 'mysql';
     protected $fillable = [
-        'user', 'product', 'total', 'status', 'created_at', 'updated_at', 'deleted_at'
+        'id_buku', 'id_kategori', 'judul', 'pengarang', 'tahun_terbit', 'created_at', 'updated_at', 'deleted_at'
     ];
 }

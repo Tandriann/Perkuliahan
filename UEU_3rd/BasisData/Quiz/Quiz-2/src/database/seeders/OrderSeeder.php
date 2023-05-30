@@ -19,15 +19,19 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        //
-        $timestamp = \Carbon\Carbon::now()->toDateTimeString();
-        DB::table('orders')->insert([
-            'user' => 'client',
-            'product' => 'baju',
-            'total' => '50000',
-            'status' => 'pending',
-            'created_at' => $timestamp,
-            'updated_at' => $timestamp
-        ]);
+        $faker = Faker::create();
+
+        for ($i = 0; $i < 100; $i++) {
+
+            $timestamp = \Carbon\Carbon::now()->toDateTimeString();
+            DB::table('orders')->insert([
+                'user' => $faker->name,
+                'product' => 'baju',
+                'total' => $faker->randomDigit,
+                'status' => 'pending',
+                'created_at' => $timestamp,
+                'updated_at' => $timestamp
+            ]);
+        }
     }
 }

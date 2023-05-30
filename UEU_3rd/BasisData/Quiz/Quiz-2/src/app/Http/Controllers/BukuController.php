@@ -17,7 +17,7 @@ class OrderController extends Controller
     public function index()
     {
         //
-        $test = DB::connection('mysql')->table('orders')->get();
+        $test = DB::connection('mysql')->table('buku')->get();
         return response()->json($test);
     }
 
@@ -26,7 +26,7 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         $timestamp = \Carbon\Carbon::now()->toDateTimeString();
         $this->validate($request, [
@@ -51,6 +51,7 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
+        //
     }
 
     /**
@@ -59,10 +60,9 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function show(Order $order, $id)
+    public function show(Order $order)
     {
-        $test = DB::connection('mysql')->table('orders')->where('id', $id)->get();
-        return response()->json($test);
+        //
     }
 
     /**
@@ -103,7 +103,7 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order, $id)
+    public function destroy(Order $order)
     {
         $query = DB::connection('mysql')->table('order')->find($id);
         if ($query == NULL) {
